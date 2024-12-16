@@ -1,0 +1,57 @@
+class ProductFeedScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Mercadillo')),
+      body: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.all(8.0),
+            child: Text('Tiendas', style: TextStyle(fontSize: 22)),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: 10, // Número de productos
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: Image.asset('assets/product_image.jpg'),
+                  title: Text('Producto $index'),
+                  subtitle: Text('Precio: \$50'),
+                  trailing: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(Icons.shopping_cart),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/details');
+                        },
+                        icon: Icon(Icons.info),
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
+          BottomNavigationBar(
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle),
+                label: 'Perfil',
+                backgroundColor: Colors.blue,
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.shopping_cart),
+                label: 'Carrito',
+                backgroundColor: Colors.blue,
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
