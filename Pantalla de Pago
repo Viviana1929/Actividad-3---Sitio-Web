@@ -1,0 +1,35 @@
+class PaymentScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Pantalla de Pago')),
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            Text('Resumen de compra'),
+            ListTile(
+              leading: Image.asset('assets/product_image.jpg'),
+              title: Text('Producto XYZ'),
+              subtitle: Text('Precio: \$50'),
+            ),
+            Spacer(),
+            Text('Total: \$250'),
+            ElevatedButton(
+              onPressed: () {
+                // Confirmar pago
+              },
+              child: Text('Confirmar compra'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context); // Regresar al carrito
+              },
+              child: Text('Cancelar'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
