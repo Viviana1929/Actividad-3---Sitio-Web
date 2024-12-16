@@ -1,0 +1,31 @@
+class ProductDetailScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Detalle del Producto')),
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            Image.asset('assets/product_image.jpg'),
+            Text('Producto XYZ', style: TextStyle(fontSize: 24)),
+            Text('Precio: \$100'),
+            Text('Descripción: Este es un producto de alta calidad.'),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('Comprar ahora'),
+            ),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('Añadir al carrito'),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text('Contactar al vendedor'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
