@@ -1,0 +1,26 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MercadilloApp());
+}
+
+class MercadilloApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Mercadillo App',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/login': (context) => LoginRegisterScreen(),
+        '/register': (context) => LoginRegisterScreen(),
+        '/feed': (context) => ProductFeedScreen(),
+        '/details': (context) => ProductDetailScreen(),
+        '/cart': (context) => CartScreen(),
+        '/payment': (context) => PaymentScreen(),
+        '/profile': (context) => ProfileScreen(),
+        '/support': (context) => SupportScreen(),
+      },
+    );
+  }
+}
