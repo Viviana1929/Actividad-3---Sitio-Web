@@ -1,0 +1,33 @@
+class SupportScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Soporte')),
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            ListTile(
+              title: Text('Cómo comprar productos'),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text('Problemas con el pago'),
+              onTap: () {},
+            ),
+            ListTile(
+              title: Text('Otros temas'),
+              onTap: () {},
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Lógica de contacto
+              },
+              child: Text('Contactar soporte'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
