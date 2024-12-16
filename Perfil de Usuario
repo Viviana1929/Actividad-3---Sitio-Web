@@ -1,0 +1,37 @@
+class ProfileScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Perfil de Usuario')),
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            CircleAvatar(
+              radius: 40,
+              backgroundImage: AssetImage('assets/profile.jpg'),
+            ),
+            Text('Nombre de Usuario', style: TextStyle(fontSize: 22)),
+            Text('Correo electrónico: usuario@mail.com'),
+            ElevatedButton(
+              onPressed: () {},
+              child: Text('Editar perfil'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Cerrar sesión
+              },
+              child: Text('Cerrar sesión'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/orderHistory');
+              },
+              child: Text('Historial de compras'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
