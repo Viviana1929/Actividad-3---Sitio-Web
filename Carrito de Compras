@@ -1,0 +1,38 @@
+class CartScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Carrito de Compras')),
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            ListView.builder(
+              shrinkWrap: true,
+              itemCount: 5, // Número de productos en el carrito
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: Image.asset('assets/product_image.jpg'),
+                  title: Text('Producto $index'),
+                  subtitle: Text('Precio: \$50'),
+                  trailing: IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.delete),
+                  ),
+                );
+              },
+            ),
+            Spacer(),
+            Text('Total: \$250'),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/payment');
+              },
+              child: Text('Finalizar compra'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
