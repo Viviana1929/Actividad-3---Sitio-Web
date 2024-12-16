@@ -1,0 +1,44 @@
+class LoginRegisterScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Iniciar sesión / Registro')),
+      body: Padding(
+        padding: EdgeInsets.all(20.0),
+        child: Column(
+          children: [
+            TextField(
+              decoration: InputDecoration(labelText: 'Correo electrónico'),
+            ),
+            TextField(
+              obscureText: true,
+              decoration: InputDecoration(labelText: 'Contraseña'),
+            ),
+            Row(
+              children: [
+                Checkbox(value: false, onChanged: (bool? value) {}),
+                Text('Recordar contraseña'),
+              ],
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Iniciar sesión
+              },
+              child: Text('Ingresar'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/register');
+              },
+              child: Text('Crear cuenta'),
+            ),
+            TextButton(
+              onPressed: () {},
+              child: Text('¿Olvidaste tu contraseña?'),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
